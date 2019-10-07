@@ -1,0 +1,8 @@
+config = {
+    "users": {
+        "admin": ["passwords"], // for the interface maybe
+
+    },
+    "port": ,
+    "DBPORT": 
+}
