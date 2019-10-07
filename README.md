@@ -59,3 +59,26 @@ data (stored in DB) -> {
 
 
 ```
+
+> /user/fetchall-> POST 
+```json 
+// Params: 
+NONE
+
+// RETURNS
+data (stored in DB) -> {
+    "user1": {
+        "output": "codeOP"
+    },
+    "user2": {
+        "output": "codeOP"
+    },
+    "user3": {
+        "output": "codeOP"
+    }
+    .
+    .
+    .
+}
+
+```

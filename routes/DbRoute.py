@@ -98,3 +98,16 @@ class UserUpdate(tornado.web.RequestHandler):
         except Exception as e:
             print(e)
             self.send_error(500)
+
+
+class UserFetchAll(tornado.web.RequestHandler):
+
+    @gen.coroutine
+    def get(self):
+        d = DatabaseHandler(client)
+        try:
+            data = d.fetchall()
+            self.write(data)
+        except Exception as e:
+            print(e)
+            self.send_error(404)

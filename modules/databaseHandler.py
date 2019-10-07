@@ -49,4 +49,12 @@ class DatabaseHandler:
             if user == x["user"]:
                 self.data = x
                 break
+
+    def fetchall(self):
+        data = {}
+        for x in self.cursor.find():
+            data.update({x["user"]: x["value"]})
+
+
+        return data
         

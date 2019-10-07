@@ -16,6 +16,8 @@ def make_app():
         (r'/user/delete', UserDelete),
         (r'/user/update', UserUpdate),
         (r'/user/fetch', UserFetch),
+        (r'/user/fetchall', UserFetchAll),
+
 
     ])
 
