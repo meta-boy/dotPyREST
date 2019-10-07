@@ -60,7 +60,7 @@ data (stored in DB) -> {
 
 ```
 
-> /user/fetchall-> POST 
+> /user/fetchall-> GET
 ```json 
 // Params: 
 NONE
