@@ -1,12 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <style>
+        html,
+        body {
+            background: #dedfe2
+        }
+
+        .code {
+            /* background:  */
+            font-family: 'Roboto Mono', monospace;
+            border-radius: 10px;
+        }
+
+        .code> p {
+            padding: 20px;
+        }
+    </style>
+
     <title>Document</title>
 </head>
+
 <body>
-    
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        {%  for key in data %}
+        <div class="row">
+            <div class="col s12 ">
+                <div class="card blue-grey lighten-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">{{ key }}</span>
+                        <div class="code blue-grey darken-4">
+                                    <p>
+                            {{ data[key]["output"] }}
+                                    </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% end %}
+    </div>
+
+
 </body>
 </html>

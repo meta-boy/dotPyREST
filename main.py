@@ -17,6 +17,8 @@ def make_app():
         (r'/user/update', UserUpdate),
         (r'/user/fetch', UserFetch),
         (r'/user/fetchall', UserFetchAll),
+        (r'/user/show', ShowAll ),
+
 
 
     ])
