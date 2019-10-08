@@ -111,3 +111,16 @@ class UserFetchAll(tornado.web.RequestHandler):
         except Exception as e:
             print(e)
             self.send_error(404)
+
+
+class ShowAll(tornado.web.RequestHandler):  
+    
+    @gen.coroutine
+    def get(self):
+        d = DatabaseHandler(client)
+        try:
+            data = d.fetchall()
+            self.render("../templates/users.html", data = data)
+        except Exception as e:
+            print(e)
+            self.write_error(404)

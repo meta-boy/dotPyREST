@@ -1,6 +1,11 @@
 # dotPyREST
 REST API for DotPy round 3
 
+
+> /user/show
+
+<img src ="https://cdn.discordapp.com/attachments/542955763472007188/631036888580358155/unknown.png">
+
 ### ROOT: /user/
 
 > /user/create -> POST 
