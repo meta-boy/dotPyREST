@@ -10,12 +10,16 @@ client = pymongo.MongoClient(f"mongodb://localhost:{config['DBPORT']}/")
 class UserCreate(tornado.web.RequestHandler):
 
     @gen.coroutine
-    def post(self):
-        data = self.get_argument("data", default=None)
-        print(data)
+    def post(self):     
+        user = self.get_argument("user", default=None)
+        output = self.get_argument("output", default=None)
+        
+        data = {
+            user : {
+                "output": output
+            }
+        }
 
-        data = json.loads(str(data))
-        print(data)
         d = DatabaseHandler(client)
         try:
             if data:
@@ -124,3 +128,11 @@ class ShowAll(tornado.web.RequestHandler):
         except Exception as e:
             print(e)
             self.write_error(404)
+
+
+class EnterUserName(tornado.web.RequestHandler):
+    
+    @gen.coroutine
+    def get(self):
+        data = self.get_argument("data", default= None)
+        self.render("../templates/fill.html", data = data)
